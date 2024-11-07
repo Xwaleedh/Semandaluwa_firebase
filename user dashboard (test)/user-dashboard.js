@@ -23,4 +23,24 @@ firebase.auth().onAuthStateChanged(user => {
       console.error("Error signing out: ", error);
     });
   }
+
+  // Change password functionality
+document.getElementById('change-password-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent form submission
+  
+    const newPassword = document.getElementById("new-password").value;
+  
+    // Get the current user
+    const user = firebase.auth().currentUser;
+  
+    user.updatePassword(newPassword)
+      .then(() => {
+        console.log('Password updated successfully!');
+        alert('Password updated successfully!');
+      })
+      .catch(error => {
+        console.error('Error updating password:', error);
+        alert(error.message); // Display error message
+      });
+  });
   
