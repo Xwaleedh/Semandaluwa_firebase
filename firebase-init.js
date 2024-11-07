@@ -6,6 +6,11 @@ import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+// firebase-init.js
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyCwO0xuY9imGzuoxuoun6XXprB50W6NOfQ",
   authDomain: "semmandalluwa-test.firebaseapp.com",
