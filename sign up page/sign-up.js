@@ -1,45 +1,22 @@
 // sign-up.js
 
-// Function to sign up a user
-async function signUp() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+document.getElementById('sign-up-form').addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent form submission
   
-    try {
-      // Use Firebase Authentication to create a user
-      const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
-      
-      // User successfully created
-      console.log("User signed up:", userCredential.user);
-      alert("User signed up successfully!");
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
   
-      // Optionally, you can store user data in Firestore or redirect them
-      // Example: save additional user info to Firestore (see database.js)
-    } catch (error) {
-      console.error("Error signing up:", error.message);
-      alert("Error signing up: " + error.message);
-    }
-  }
-  
-  // Add event listener for the form submission (optional)
-  document.getElementById("sign-up-form").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent the default form submission
-    signUp();
-  });
-  
+  // Create a new user with email and password
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(userCredential => {
+      // User created successfully
+      console.log('User created:', userCredential.user);
 
-  async function signUp() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-  
-    try {
-      console.log("Attempting to sign up...");
-      const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
-      console.log("User signed up:", userCredential.user);
-      alert("User signed up successfully!");
-    } catch (error) {
-      console.error("Error signing up:", error.message);
-      alert("Error signing up: " + error.message);
-    }
-  }
-  
+      // Redirect to the user dashboard or other page after successful sign up
+      window.location.href = 'user-dashboard.html'; 
+    })
+    .catch(error => {
+      console.error('Error during sign up:', error);
+      alert(error.message); // Display error message if something goes wrong
+    });
+});
