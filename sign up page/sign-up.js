@@ -1,9 +1,8 @@
-// sign-up.js
 import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js';
 import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js';
 import { auth, db } from './firebase-init.js';  // Import auth and db from firebase-init.js
 
-// Handle sign up form submission
+// Handle sign-up form submission
 const signUpForm = document.getElementById('signUpForm');
 signUpForm.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -18,7 +17,7 @@ signUpForm.addEventListener('submit', async (e) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    // Save user data in Firestore (Firestore can store additional details)
+    // Save user data in Firestore
     await addDoc(collection(db, 'users'), {
       uid: user.uid,
       firstName: firstName,

@@ -1,8 +1,7 @@
-// Import the functions you need from the SDKs
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js';
-import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js';
-import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js';
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js';
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js';
 
 // Your Firebase configuration
 const firebaseConfig = {
@@ -20,26 +19,5 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 // Initialize services
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-// Example usage of Firestore and Auth
-// Function to create a new user
-async function createNewUser(email, password) {
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    console.log("User created:", userCredential.user);
-  } catch (error) {
-    console.error("Error creating user:", error);
-  }
-}
-
-// Function to add a document to a Firestore collection
-async function addDocumentToCollection(collectionName, data) {
-  try {
-    const docRef = await addDoc(collection(db, collectionName), data);
-    console.log("Document written with ID:", docRef.id);
-  } catch (error) {
-    console.error("Error adding document:", error);
-  }
-}
+export const auth = getAuth(app);
+export const db = getFirestore(app);
