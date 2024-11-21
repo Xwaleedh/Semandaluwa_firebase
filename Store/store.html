@@ -9,9 +9,11 @@
     <link rel="icon" href="/path/to/favicon.ico">
     <link rel="icon" type="image/x-icon" href="../Assets/Navbar Logo.png" />
     <link rel="stylesheet" href="./store-style.css">
+    <script type="module" src="../firebase-init.js"></script>
+    <script type="module" src="../log-in auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js"></script>
 
     <title>Store</title>
 </head>
@@ -41,9 +43,15 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="../Store/store.html">Store</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="loginLink">
                         <a class="btn btn-primary" href="../LogIn page/index.html">Login</a>
-                    </li>
+                      </li>
+                      <li class="nav-item" id="logoutLink" style="display:none;">
+                        <a class="btn btn-danger" href="../index.html" id="logoutBtn">Logout</a>
+                      </li>
+                      <li class="nav-item" id="userDashboardLink" style="display:none;">
+                        <a class="btn btn-info" href="../user dashboard (test)/index.html">User Dashboard</a>
+                      </li>
                 </ul>
             </div>
         </div>

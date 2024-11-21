@@ -10,10 +10,11 @@
     <link rel="icon" type="image/x-icon" href="./Assets/Navbar Logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <script src="script.js"></script>
-    <script src="firebase-init.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+    <script type="module" src="./firebase-init.js"></script>
+    <script type="module" src="./log-in auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
     <title>Home</title>
 </head>
 
@@ -21,36 +22,45 @@
     <div class="loader"></div>
 
     <!--Navbar section-->
-    <nav style="background-color: #6B8E23;" class="navbar navbar-expand-lg px-5">
-        <div class="container-fluid">
-            <a class="Navbar-logo navbar-brand" href="#">
-                <img class="rounded-circle" src="../Assets/Navbar Logo.png" alt="logo" srcset="" height="40px" width="40px">
-            </a>
-            <a class="navbar-brand text-dark" href="#">Semmandalluwa</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-dark" aria-current="page" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="mailto:ahmed.nihal@gmail.com">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="../About Us/index.html">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="../Store/store.html">Store</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary" href="../LogIn page/index.html">Login</a>
-                    </li>
-                </ul>
-            </div>
+    <!--Navbar section-->
+<nav style="background-color: #6B8E23;" class="navbar navbar-expand-lg px-5">
+    <div class="container-fluid">
+        <a class="Navbar-logo navbar-brand" href="#">
+            <img class="rounded-circle" src="../Assets/Navbar Logo.png" alt="logo" height="40px" width="40px">
+        </a>
+        <a class="navbar-brand text-dark" href="#">Semmandalluwa</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-dark" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="mailto:ahmed.nihal@gmail.com">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="../About Us/index.html">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="../Store/store.html">Store</a>
+                </li>
+                <!-- These links will show/hide based on authentication -->
+                <li class="nav-item" id="loginLink">
+                    <a class="btn btn-primary" href="../LogIn page/index.html">Login</a>
+                </li>
+                <li class="nav-item" id="logoutLink" style="display:none;">
+                    <a class="btn btn-danger" href="#" id="logoutBtn">Logout</a>
+                </li>
+                <li class="nav-item" id="userDashboardLink" style="display:none;">
+                    <a class="btn btn-info" href="../user dashboard (test)/index.html">User Dashboard</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
     
     <!--Background Image-->
     <div class="landing-Background d-flex flex-column justify-content-center px-5">
