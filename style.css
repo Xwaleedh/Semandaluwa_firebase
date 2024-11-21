@@ -318,3 +318,14 @@ ul {
         font-size: 16px;
         padding: 7px;
     }
+
+    .heading {
+      color: #FFFFFF;
+      text-shadow: 1px 1px 1.5px rgba(0, 0, 0, 0.7); /* Dark shadow */
+    }
+    
+    .subheading {
+      color: #F8F8FF;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    }
+    

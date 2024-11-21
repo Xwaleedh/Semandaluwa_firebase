@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: margin-left 0.3s ease;
+  }
+
+  .main-content {
+    padding: 20px;
+    min-height: 100vh; /* Make sure content takes full height */
+  }
+
+  /* Sidebar Styles */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Sidebar is hidden initially */
+    width: 250px;
+    height: 100vh;
+    background-color: #343a40;
+    transition: left 0.3s ease;
+    padding-top: 20px;
+  }
+
+  .sidebar .nav-item {
+    margin: 10px 0;
+  }
+
+  .sidebar .nav-link {
+    color: white;
+  }
+
+  .sidebar .nav-link.active {
+    background-color: #007bff;
+  }
+
+  /* Optional: Add a hover effect on nav links */
+  .sidebar .nav-link:hover {
+    background-color: #575757;
+  }
+
+  /* Show the sidebar when hovering over the left side of the page */
+  body:hover .sidebar {
+    left: 0;
+  }
+
+  /* Ensure that the content area pushes right when sidebar appears */
+  body:hover .main-content {
+    margin-left: 250px;
+  }
