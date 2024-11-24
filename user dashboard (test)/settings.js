@@ -65,3 +65,4 @@ document.getElementById('changePasswordForm').addEventListener('submit', async (
         feedbackMessage.style.color = 'red';
     }
 });
+    
