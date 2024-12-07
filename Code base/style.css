@@ -1,0 +1,135 @@
+/* Navbar Styles */
+.navbar {
+  background-color: #6B8E23;
+}
+
+.navbar .navbar-brand img {
+  border-radius: 50%;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  color: #333;
+  font-weight: 500;
+  padding: 10px 15px;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #f4a460;
+}
+
+.navbar .navbar-toggler {
+  border: none;
+}
+
+/* Landing page styles */
+.landing-Background {
+  background-image: url('./Assets/Farm.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.landing-Background h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.landing-Background h2 {
+  font-size: 2rem;
+  font-weight: lighter;
+  margin-bottom: 30px;
+}
+
+/* Footer styles */
+footer{
+  background: #343434;
+  padding-top: 50px;
+  color: white;
+}
+.container{
+  width: 1140px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.footer-content{
+  width: 33.3%;
+}
+h3{
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.footer-content p{
+  width:190px;
+  margin: auto;
+  padding: 7px;
+}
+.footer-content ul{
+  text-align: center;
+}
+.list{
+  padding: 0;
+}
+.list li{
+  width: auto;
+  text-align: center;
+  list-style-type:none;
+  padding: 7px;
+  position: relative;
+}
+.list li::before{
+  content: '';
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 100%;
+  width: 0;
+  height: 2px;
+  background: #f18930;
+  transition-duration: .5s;
+}
+.list li:hover::before{
+  width: 70px;
+}
+.social-icons{
+  text-align: center;
+  padding: 0;
+}
+.social-icons li{
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+}
+.social-icons i{
+  color: white;
+  font-size: 25px;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  color: #f18930;
+}
+.social-icons i:hover{
+  color: #f18930;
+}
+.bottom-bar{
+  background: #f18930;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 50px;
+}
+.bottom-bar p{
+  color: #343434;
+  margin: 0;
+  font-size: 16px;
+  padding: 7px;
+}

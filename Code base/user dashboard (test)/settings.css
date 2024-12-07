@@ -1,0 +1,59 @@
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Sidebar hidden initially */
+  width: 250px;
+  height: 100vh;
+  background-color: #343a40;
+  transition: left 0.3s ease;
+  padding-top: 20px;
+  z-index: 1000;
+}
+
+.sidebar .nav-item {
+  margin: 10px 0;
+}
+
+.sidebar .nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #575757;
+}
+
+/* Sidebar hover trigger zone */
+.sidebar-trigger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px; /* Hover zone width increased for better sensitivity */
+  height: 100vh;
+  z-index: 999; /* Above the main content */
+  cursor: pointer;
+  background-color: transparent; /* Keep it invisible */
+}
+
+/* Show the sidebar when hovering over the trigger zone */
+.sidebar-trigger:hover ~ .sidebar,
+.sidebar:hover {
+  left: 0;
+}
+
+/* Ensure the main content doesn't shift */
+.main-content {
+  transition: margin-left 0.3s ease-in-out;
+}
+
+
+
+.change-password-container {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
